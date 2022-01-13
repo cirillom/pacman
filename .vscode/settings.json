@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/snap/openjfx/199/sdk/lib/javafx.base.jar",
+        "/snap/openjfx/199/sdk/lib/javafx.controls.jar",
+        "/snap/openjfx/199/sdk/lib/javafx.fxml.jar",
+        "/snap/openjfx/199/sdk/lib/javafx.graphics.jar",
+        "/snap/openjfx/199/sdk/lib/javafx.media.jar",
+        "/snap/openjfx/199/sdk/lib/javafx.swing.jar",
+        "/snap/openjfx/199/sdk/lib/javafx.web.jar",
+        "/snap/openjfx/199/sdk/lib/javafx-swt.jar"
+    ]
+}
