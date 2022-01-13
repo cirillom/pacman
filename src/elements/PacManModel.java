@@ -29,7 +29,6 @@ public class PacManModel {
     @FXML private int columnCount;
 
     private CellValue[][] grid; //the grid with the location of everything
-    private vertice[][] movementGrid; //the grid that has a valid movement path
     private int score;
     private int level;
     private int lifes;
@@ -89,7 +88,6 @@ public class PacManModel {
             e.printStackTrace();
         }
         grid = new CellValue[rowCount][columnCount];
-        movementGrid = new vertice[rowCount][columnCount];
         int row = 0;
         while(scanner2.hasNextLine()){
             int column = 0;
@@ -99,7 +97,6 @@ public class PacManModel {
                 String value = lineScanner.next();
                 CellValue thisValue;
                 
-                movementGrid[row][column] = new vertice(row, column);
                 if (value.equals("W")){
                     thisValue = CellValue.WALL;
                 }
@@ -294,6 +291,8 @@ public class PacManModel {
         ArrayList<vertice> listaFechada = new ArrayList<vertice>();
         ArrayList<vertice> listaCaminho = new ArrayList<vertice>();
 
+        Grafo.limpaVertice();
+
         // Procura as coordenadas do fantasma e do pacman na lista de vertices
         vertice Fantasma = Grafo.procuraVertice((int)ghost.getLocation().getX(), (int)ghost.getLocation().getY());
         vertice Pacman = Grafo.procuraVertice((int)pacman.getLocation().getX(), (int)pacman.getLocation().getY());
@@ -364,7 +363,6 @@ public class PacManModel {
             listaAberta.remove(posMenorF);
         }
 
-        int m = 0;
         // Quando sair do laço -> encontrou o pacman -> gera o caminho
         // Enquanto o pacman não for nulo
         while(Pacman != null){
@@ -627,8 +625,10 @@ public class PacManModel {
         
         //if pacman is at home, he can collect fruit
         if(pacmanLocationCellValue == CellValue.PACMANHOME){
-            score += 200*(fruit) - 100; //if fruit 1, score 100, if fruit 2, score 300...
-            fruit = 0;
+            if(fruit != 0){
+                score += 200*(fruit) - 100; //if fruit 1, score 100, if fruit 2, score 300...
+                fruit = 0;
+            }
         }
         //if PacMan is on a small dot, delete small dot
         if (pacmanLocationCellValue == CellValue.SMALLDOT) {
@@ -646,19 +646,18 @@ public class PacManModel {
             ghostEatingMode = true;
             Controller.setGhostEatingModeCounter(this.level);
         }
-        this.moveGhosts();
         
         for (character ghost : ghosts) {
             if (ghostEatingMode) {
                 if (pacman.getLocation().equals(ghost.getLocation())) {
                     sendCharacterHome(ghost);
+                    score += 100 * 2^ghostsEaten;
                     ghostsEaten++;
-                    score += 200 * 2^ghostsEaten;
                 }
             }else { //loses life if PacMan is eaten by a ghost
                 ghostsEaten = 0; //always reset the ghostEaten counter when not in ghost eating mode
                 ghost.setAlive(true);
-
+                
                 if (pacman.getLocation().equals(ghost.getLocation())) {
                     lifes--;
                     if(lifes<=0){
@@ -669,6 +668,8 @@ public class PacManModel {
                 }
             }
         }
+        this.moveGhosts();
+
 
         if (this.isLevelComplete()) {
             pacman.SetVelocity(new Point2D(0, 0));

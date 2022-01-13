@@ -90,4 +90,10 @@ public class grafo {
         }
         return null;
     }   
+
+    public void limpaVertice(){
+        for (int i = 0; i < this.listaVertices.size(); i++){ 
+            listaVertices.get(i).resetVertice();
+        }
+    }
 }
