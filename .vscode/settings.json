@@ -9,5 +9,6 @@
         "/snap/openjfx/199/sdk/lib/javafx.swing.jar",
         "/snap/openjfx/199/sdk/lib/javafx.web.jar",
         "/snap/openjfx/199/sdk/lib/javafx-swt.jar"
-    ]
+    ],
+    "java.dependency.packagePresentation": "hierarchical"
 }

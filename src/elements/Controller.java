@@ -30,7 +30,7 @@ public class Controller implements EventHandler<KeyEvent> {
     @FXML private BorderPane borderPane;
     @FXML private PacManView pacManView;
 
-    private static final String[] levelFiles = {"src/res/levels/level1.txt", "src/res/levels/level1.txt", "src/res/levels/level1.txt"}; //todos os niveis são iguais
+    private static final String[] levelFiles = {"src/resources/levels/level1.txt", "src/resources/levels/level1.txt", "src/resources/levels/level1.txt"}; //todos os niveis são iguais
 
     private PacManModel pacManModel;
     private Timer timer;
@@ -83,7 +83,7 @@ public class Controller implements EventHandler<KeyEvent> {
         this.pacManModel.step(direction);
         this.pacManView.updateView(pacManModel);
 
-        Image headerImage = new Image(getClass().getResourceAsStream("/res/images/Pac_man_CM.png"), 560,105,false,false);
+        Image headerImage = new Image(getClass().getResourceAsStream("/resources/images/Pac_man_CM.png"), 560,105,false,false);
         ImageView headerCM = new ImageView(headerImage);
         this.headerLabel.setGraphic(headerCM);
 
@@ -105,7 +105,7 @@ public class Controller implements EventHandler<KeyEvent> {
         Text life = new Text("Vidas: ");
         life.setStyle("-fx-font-size: 150%");
         life.setFill(Color.WHITE);
-        Image heart = new Image(getClass().getResourceAsStream("/res/images/heart.png"), 18, 15, false, false);
+        Image heart = new Image(getClass().getResourceAsStream("/resources/images/heart.png"), 18, 15, false, false);
 
         ImageView[] hearts = new ImageView[4];
         for (int i = 0; i < hearts.length; i++) {

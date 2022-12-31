@@ -34,19 +34,19 @@ public class PacManView extends Group {
      * Initializes the values of the image instance variables from files
      */
     public PacManView() {
-        this.pacmanRightImage = new Image(getClass().getResourceAsStream("/res/gifs/pacmanRight.gif"));
-        this.pacmanUpImage = new Image(getClass().getResourceAsStream("/res/gifs/pacmanUp.gif"));
-        this.pacmanDownImage = new Image(getClass().getResourceAsStream("/res/gifs/pacmanDown.gif"));
-        this.pacmanLeftImage = new Image(getClass().getResourceAsStream("/res/gifs/pacmanLeft.gif"));
-        this.blueGhostImage = new Image(getClass().getResourceAsStream("/res/gifs/blueghost.gif"));
-        this.blueWallImage = new Image(getClass().getResourceAsStream("/res/images/blueWall.png"));
-        this.greenWallImage = new Image(getClass().getResourceAsStream("/res/images/greenWall.png"));
-        this.redWallImage = new Image(getClass().getResourceAsStream("/res/images/redWall.png"));
-        this.bigDotImage = new Image(getClass().getResourceAsStream("/res/images/whitedot.png"));
-        this.smallDotImage = new Image(getClass().getResourceAsStream("/res/images/smalldot.png"));
-        this.cerejaImage = new Image(getClass().getResourceAsStream("/res/images/cereja.png"));
-        this.morangoImage = new Image(getClass().getResourceAsStream("/res/images/morango.png"));
-        this.laranjaImage = new Image(getClass().getResourceAsStream("/res/images/laranja.png"));
+        this.pacmanRightImage = new Image(getClass().getResourceAsStream("/resources/gifs/pacmanRight.gif"));
+        this.pacmanUpImage = new Image(getClass().getResourceAsStream("/resources/gifs/pacmanUp.gif"));
+        this.pacmanDownImage = new Image(getClass().getResourceAsStream("/resources/gifs/pacmanDown.gif"));
+        this.pacmanLeftImage = new Image(getClass().getResourceAsStream("/resources/gifs/pacmanLeft.gif"));
+        this.blueGhostImage = new Image(getClass().getResourceAsStream("/resources/gifs/blueghost.gif"));
+        this.blueWallImage = new Image(getClass().getResourceAsStream("/resources/images/blueWall.png"));
+        this.greenWallImage = new Image(getClass().getResourceAsStream("/resources/images/greenWall.png"));
+        this.redWallImage = new Image(getClass().getResourceAsStream("/resources/images/redWall.png"));
+        this.bigDotImage = new Image(getClass().getResourceAsStream("/resources/images/whitedot.png"));
+        this.smallDotImage = new Image(getClass().getResourceAsStream("/resources/images/smalldot.png"));
+        this.cerejaImage = new Image(getClass().getResourceAsStream("/resources/images/cereja.png"));
+        this.morangoImage = new Image(getClass().getResourceAsStream("/resources/images/morango.png"));
+        this.laranjaImage = new Image(getClass().getResourceAsStream("/resources/images/laranja.png"));
     }
 
     /**

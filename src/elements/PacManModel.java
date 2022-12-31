@@ -182,10 +182,10 @@ public class PacManModel {
         for (int i = 0; i < ghosts.length; i++) {
             ghosts[i] = new character();
         }
-        this.ghosts[0].setImage(new Image(getClass().getResourceAsStream("/res/gifs/blinky.gif")));
-        this.ghosts[1].setImage(new Image(getClass().getResourceAsStream("/res/gifs/pinky.gif")));
-        this.ghosts[2].setImage(new Image(getClass().getResourceAsStream("/res/gifs/inky.gif")));
-        this.ghosts[3].setImage(new Image(getClass().getResourceAsStream("/res/gifs/clyde.gif")));
+        this.ghosts[0].setImage(new Image(getClass().getResourceAsStream("/resources/gifs/blinky.gif")));
+        this.ghosts[1].setImage(new Image(getClass().getResourceAsStream("/resources/gifs/pinky.gif")));
+        this.ghosts[2].setImage(new Image(getClass().getResourceAsStream("/resources/gifs/inky.gif")));
+        this.ghosts[3].setImage(new Image(getClass().getResourceAsStream("/resources/gifs/clyde.gif")));
 
         this.initializeLevel(Controller.getLevelFile(0));
     }

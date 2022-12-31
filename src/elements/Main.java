@@ -4,9 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
 
 public class Main extends Application {
 
@@ -20,7 +18,6 @@ public class Main extends Application {
         Controller controller = loader.getController();
         root.setOnKeyPressed(controller);
 
-        Font.loadFont(getClass().getResourceAsStream("fonts/Pixeboy.ttf"), 16); //loads the default font
         double sceneWidth = controller.getBoardWidth() + 20.0;
         double sceneHeight = controller.getBoardHeight() + 200.0;
         Scene scene = new Scene(root, sceneWidth, sceneHeight);
